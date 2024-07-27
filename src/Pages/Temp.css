@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background-color: #e3dede; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    height: 540px;
+    max-width: 1050px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.van{
+    background-color: pink;
+}
+
+.tools-board {
+    width: 210px;
+    height: 590px;
+    border-radius: 20px;
+    background-color: #f8f7f6;
+    padding: 15px 22px 0;
+}
+
+.tools-board .row {
+    margin-bottom: 20px;
+}
+
+.row .options {
+    list-style: none;
+    margin: 10px 0 0 5px;
+}
+
+.row .options .option {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option:is(:hover, .active) img {
+    filter: grayscale(20%);
+}
+
+.option :where(span, label) {
+    color: black;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.option:is(:hover, .active) :where(span, label) {
+    color: #f4130b;
+}
+
+.option #fill-color {
+    height: 14px;
+    cursor: pointer;
+    width: 14px;
+}
+
+#fill-color:checked~label {
+    color: #e93e2b;
+}
+
+.option #size-slider {
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.colors .options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colors .option {
+    height: 20px;
+    width: 20px;
+    border-radius: 30%;
+    margin-top: 10px;
+}
+
+.colors .selected {
+    box-shadow: 0 0 0 2px #d1d1d1;
+}
+
+.drawing-board {
+    height: 100%;
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    background: #f8f7f6;
+}
+
+.drawing-board canvas {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px #b6b5b5;
+    cursor: crosshair;
+}
+
+.clear-canvas, .save-img {
+    width: 100%;
+    margin-bottom: 8px;
+    background: #f8f7f6;
+    border: 1px solid #f8f7f6;
+    padding: 6px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-canvas:hover, .save-img:hover {
+    background: white;
+    border: 1px solid #f8f7f6;
+    box-shadow: 0 1px 2px #b3b1b1;
+}
